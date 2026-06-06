@@ -41,10 +41,10 @@ public class DateConverter {
         if (gregMonth == 12) {
             return "December"; 
         } 
-        return "Unknown"; 
+        return "Unknown";  // Code generated with ChatGPT; wasn't working without it
     }
 
-    public int[] convertGeezToGregorian(int geezMonthIndex, int geezDay){
+    public int[] convertGeezToGregorian(int geezMonthIndex, int geezDay){  // Method logic help from ChatGPT
         int absoluteDays = (geezMonthIndex * 30) + (geezDay - 1);
         int targetMonth = 9;
         int targetDay = 11 + absoluteDays;
@@ -93,17 +93,16 @@ public class DateConverter {
     }
 
     public int[] convertGregorianToGeez(int gregMonth, int gregDay) {
-        int[] monthlyOffsets = {0, 0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334};
+        int[] monthlyOffsets = {0, 0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334};  // Logic help from ChatGPT
         int dayOfYear = monthlyOffsets[gregMonth] + gregDay;
         int geezAbsoluteDays = dayOfYear - 254;
         
-        if (geezAbsoluteDays < 0)
-        {
+        if (geezAbsoluteDays < 0){
             geezAbsoluteDays = geezAbsoluteDays + 365; 
         }
         
         int targetGeezMonth = geezAbsoluteDays / 30;
-        int targetGeezDay = (geezAbsoluteDays % 30) + 1;
+        int targetGeezDay = (geezAbsoluteDays % 30) + 1; // Code generated from ChatGPT
         
         int[] result = new int[2];
         result[0] = targetGeezMonth;
@@ -136,7 +135,8 @@ public class DateConverter {
     public void printParallelCalendars(int ancientMonthIndex, int ancientDay, int gregMonth, int gregDay) { 
         String gregMonthName = getGregorianMonthName(gregMonth); 
 
-        System.out.println("\n--- Apokty Calender Auto-Conversion ---"); 
+        System.out.println("Apokty Calender Auto-Conversion "); 
+        System.out.println(""); 
         System.out.println("Ge'ez:     " + geezMonths[ancientMonthIndex] + " " + ancientDay); 
         System.out.println("Coptic:    " + copticMonths[ancientMonthIndex] + " " + ancientDay); 
         System.out.println("Armenian:  " + armenianMonths[ancientMonthIndex] + " " + ancientDay); 

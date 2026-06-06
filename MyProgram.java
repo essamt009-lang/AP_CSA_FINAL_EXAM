@@ -23,22 +23,22 @@ public class MyProgram {
 
             if (choice == 1) {
                 while (true) {
-                    System.out.println("--- Select Date Input System ---");
+                    System.out.println("Which Calender Would You Like to Use?");
                     System.out.println(" ");
-                    System.out.println("1. Input Ge'ez/Ancient Date (Auto-Calculate Gregorian)");
-                    System.out.println("2. Input Gregorian Date (Auto-Calculate Ge'ez/Ancient)");
+                    System.out.println("1. Apokty (Auto-Calculate Gregorian)");
+                    System.out.println("2. Gregorian (Auto-Calculate Apokty)");
                     System.out.print("Choice: ");
                     int type = scanner.nextInt();
                     scanner.nextLine();
 
                     boolean success = false;
                     if (type == 1){
-                        System.out.print("Enter Ancient Month Index (0-12): ");
+                        System.out.print("Enter Apokty Month Index (0-12): ");
                         int am = scanner.nextInt();
-                        System.out.print("Enter Ancient Day (1-30): ");
+                        System.out.print("Enter Apokty Day (1-30): ");
                         int ad = scanner.nextInt();
                         scanner.nextLine();
-                        success = manager.processGeezOnlyLookup(am, ad);
+                        success = manager.processGeezOnlyLookup(am, ad); // Code generated with ChatGPT
                     }
                     if (type == 2){
                         System.out.print("Enter Gregorian Month (1-12): ");
@@ -46,18 +46,19 @@ public class MyProgram {
                         System.out.print("Enter Gregorian Day (1-31): ");
                         int gd = scanner.nextInt();
                         scanner.nextLine();
-                        success = manager.processGregorianOnlyLookup(gm, gd);
+                        success = manager.processGregorianOnlyLookup(gm, gd);  // Code generated with ChatGPT
                     }
 
                     if (success == true) {
-                        break;
+                        break; // Code generated with ChatGPT
                     }
                     System.out.println("Invalid dates, try again");
                 } 
             } 
             if (choice == 2) {
                 while (true) {
-                    System.out.print("\nEnter Feast Name: ");
+                    System.out.print("Enter Feast Name: ");
+                    System.out.print(""); 
                     String name = scanner.nextLine();
                     System.out.print("Gregorian Month (1-12): ");
                     int gm = scanner.nextInt();
@@ -65,9 +66,9 @@ public class MyProgram {
                     int gd = scanner.nextInt();
                     scanner.nextLine();
                     
-                    if (manager.createHoliday(name, gm, gd) == true) {
-                        System.out.println("Feast added.");
-                        break;
+                    if (manager.createHoliday(name, gm, gd) == true) {  // Code generated with ChatGPT
+                        System.out.println("Feast added."); // Code generated with ChatGPT
+                        break; // Code generated with ChatGPT
                     } 
                     System.out.println("Invalid dates entered! Please try again.");
                 } 
@@ -107,7 +108,7 @@ public class MyProgram {
             } 
             if (choice == 7) {
                 System.out.println("Goodbye!");
-                break;
+                break;  // Code generated with ChatGPT
             } 
         } 
         scanner.close();

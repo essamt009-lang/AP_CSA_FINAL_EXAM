@@ -4,45 +4,37 @@ public class Holiday
     private int gregMonth; 
     private int gregDay;   
 
-    public Holiday(String newName, int newMonth, int newDay) 
-    {
+    public Holiday(String newName, int newMonth, int newDay) {
         name = newName;
         gregMonth = newMonth;
         gregDay = newDay;
     }
 
-    public String getName() 
-    { 
+    public String getName() { 
         return name; 
     }
     
-    public void setName(String newName) 
-    { 
+    public void setName(String newName) { 
         name = newName; 
     }
     
-    public int getGregMonth() 
-    { 
+    public int getGregMonth() { 
         return gregMonth; 
     }
     
-    public void setGregMonth(int newMonth) 
-    { 
+    public void setGregMonth(int newMonth) { 
         gregMonth = newMonth; 
     }
     
-    public int getGregDay() 
-    { 
+    public int getGregDay() { 
         return gregDay; 
     }
     
-    public void setGregDay(int newDay) 
-    { 
+    public void setGregDay(int newDay) { 
         gregDay = newDay; 
     }
 
-    public String toString() 
-    { 
-        return name + " (" + gregMonth + "/" + gregDay + ")"; 
+    public String toString() { 
+        return name + " (" + gregMonth + "/" + gregDay + ")";
     }
 }
